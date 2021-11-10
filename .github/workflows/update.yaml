@@ -1,0 +1,80 @@
+name: 更新 openwrt 软件包
+
+on:
+  workflow_dispatch:
+    inputs:
+      ssh:
+        description: 'SSH 调试'
+        required: false
+        default: 'false'
+
+  schedule:
+    - cron: 0 */12 * * *
+
+env:
+  TZ: Asia/Shanghai
+  REPO: VergilGao/openwrt-packages
+
+jobs:
+  update:
+    runs-on: Ubuntu-20.04
+    if: github.event.repository.owner.id == github.event.sender.id
+
+    name: 更新 ${{ matrix.target }}
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [21.02]
+
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+
+    - name: 初始化操作环境
+      run : |
+        sudo -E apt-get -qq update
+        sudo -E apt-get -qq install git subversion git-core wget
+        sudo timedatectl set-timezone "${{ env.TZ }}"
+
+    - name: 编译安装 po2lmo
+      run: |
+        git clone --depth=1 https://github.com/VergilGao/po2lmo /tmp/po2lmo
+        cd /tmp/po2lmo
+        make && sudo make install
+
+    - name: 同步上游源码
+      run : |
+        cd $GITHUB_WORKSPACE
+        chmod +x convert.sh && mv convert.sh /tmp
+        chmod +x ${{ matrix.target }}.sh
+        git clone -b ${{matrix.target}} https://github.com/${{ env.REPO }}.git ${{matrix.target}}
+        cd ${{matrix.target}}
+        rm -Rf *
+        git rm --cache *
+        $GITHUB_WORKSPACE/${{ matrix.target}}.sh
+
+    - name: 提交更新
+      run: |
+        cd $GITHUB_WORKSPACE/${{ matrix.target }}
+        git config --local user.name "github-actions[bot]"
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git add .
+        git commit -m "update$(TZ='Asia/Shanghai' date +@%Y%m%d)"
+        
+    - name: 上传更新
+      env:
+        USERNAME: VergilGao
+        TOKEN: ${{ secrets.TOKEN }}
+      run: |
+        cd $GITHUB_WORKSPACE/${{ matrix.target }}
+        git push --force --quiet "https://${{ env.USERNAME }}:${{ env.TOKEN }}@github.com/${{ env.REPO }}.git" HEAD:${{ matrix.target }} || echo 'Nothing to do.'
+
+    - name: SSH connection to Actions
+      uses: P3TERX/ssh2actions@v1.0.0
+      if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
+
+    - name: 删除旧的 workflow 运行记录
+      uses: GitRML/delete-workflow-runs@main
+      with:
+        retain_days: 30
+        
