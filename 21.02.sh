@@ -34,5 +34,6 @@ rm -rf ./*/.git
 rm -rf ./*/.github
 rm -rf ./*/.svn 
 rm -f .gitattributes .gitignore
+rm README.md
 
 exit 0
