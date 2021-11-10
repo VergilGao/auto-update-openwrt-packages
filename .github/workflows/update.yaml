@@ -67,7 +67,7 @@ jobs:
         TOKEN: ${{ secrets.TOKEN }}
       run: |
         cd $GITHUB_WORKSPACE/${{ matrix.target }}
-        git push --force --quiet "https://${{ env.USERNAME }}:${{ env.TOKEN }}@github.com/${{ env.REPO }}.git" HEAD:${{ matrix.target }} || echo 'Nothing to do.'
+        git push --quiet "https://${{ env.USERNAME }}:${{ env.TOKEN }}@github.com/${{ env.REPO }}.git" HEAD:${{ matrix.target }} || echo 'Nothing to do.'
 
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
