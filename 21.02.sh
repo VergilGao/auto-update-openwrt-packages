@@ -6,6 +6,8 @@ svn co https://github.com/fw876/helloworld/trunk ./
 rm -rf .svn
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk ./
 rm -rf .svn
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/redsocks2
+
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk ./luci-app-vssr
 # OpenClash
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash ./luci-app-openclash
