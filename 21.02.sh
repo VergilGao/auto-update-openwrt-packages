@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# vssr 和他的依赖
+svn co https://github.com/jerrykuku/lua-maxminddb/trunk ./maxminddb
+svn co https://github.com/fw876/helloworld/trunk ./
+rm -rf .svn
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk ./
+rm -rf .svn
+svn co https://github.com/jerrykuku/luci-app-vssr/trunk ./luci-app-vssr
 # OpenClash
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash ./luci-app-openclash
 # 京东签到
@@ -24,6 +31,7 @@ svn co https://github.com/VergilGao/ddns-scripts-dnspod/trunk ./ddns-scripts-dns
 # 统一清理
 rm -rf .svn
 rm -rf ./*/.git
+rm -rf ./*/.github
 rm -rf ./*/.svn 
 rm -f .gitattributes .gitignore
 
