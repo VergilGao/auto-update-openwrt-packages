@@ -54,20 +54,16 @@ jobs:
         $GITHUB_WORKSPACE/${{ matrix.target}}.sh
 
     - name: 提交更新
-      run: |
-        cd $GITHUB_WORKSPACE/${{ matrix.target }}
-        git config --local user.name "github-actions[bot]"
-        git config --local user.email "github-actions[bot]@users.noreply.github.com"
-        git add .
-        git commit -m "update$(TZ='Asia/Shanghai' date "+@%Y-%m-%d%H:%M:%S")"
-        
-    - name: 上传更新
       env:
         USERNAME: VergilGao
         TOKEN: ${{ secrets.TOKEN }}
       run: |
         cd $GITHUB_WORKSPACE/${{ matrix.target }}
-        git push --quiet "https://${{ env.USERNAME }}:${{ env.TOKEN }}@github.com/${{ env.REPO }}.git" HEAD:${{ matrix.target }} || echo 'Nothing to do.'
+        git config --local user.name "github-actions[bot]"
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git add .
+        git commit -m "update$(TZ='Asia/Shanghai' date "+@%Y-%m-%d%H:%M:%S")" || echo 'Nothing to do.'
+        git push --quiet "https://${{ env.USERNAME }}:${{ env.TOKEN }}@github.com/${{ env.REPO }}.git" HEAD:${{ matrix.target }} || echo 'Nothing to do.'       
 
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
