@@ -2,12 +2,12 @@
 
 # vssr 和他的依赖
 svn co https://github.com/jerrykuku/lua-maxminddb/trunk ./maxminddb
-svn co https://github.com/fw876/helloworld/trunk ./
-rm -rf .svn
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk ./
-rm -rf .svn
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/redsocks2
-
+for i in "naiveproxy" "shadowsocks-rust" "shadowsocksr-libev" "simple-obfs" "tcping" "trojan" "v2ray-core" "v2ray-plugin" "xray-core" "xray-plugin"; do \
+  svn co "https://github.com/fw876/helloworld/trunk/$i" "$i"; \
+done
+for i in "dns2socks" "microsocks" "ipt2socks" "pdnsd-alt" "redsocks2"; do \
+  svn co "https://github.com/immortalwrt/packages/trunk/net/$i" "$i"; \
+done
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk ./luci-app-vssr
 # OpenClash
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash ./luci-app-openclash
