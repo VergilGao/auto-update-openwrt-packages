@@ -9,6 +9,7 @@ for i in "dns2socks" "microsocks" "ipt2socks" "pdnsd-alt" "redsocks2"; do \
   svn co "https://github.com/immortalwrt/packages/trunk/net/$i" "$i"; \
 done
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk ./luci-app-vssr
+sed -i "s/wget-ssl/wget/g" `grep wget-ssl -rl ./luci-app-vssr`
 # OpenClash
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash ./luci-app-openclash
 # 京东签到
