@@ -9,6 +9,7 @@ for i in "dns2socks" "microsocks" "ipt2socks" "pdnsd-alt" "redsocks2"; do \
   svn co "https://github.com/immortalwrt/packages/trunk/net/$i" "$i"; \
 done
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk ./luci-app-vssr
+sed -i "s/ --no-check-certificate / /g" `grep wget-ssl -rl ./luci-app-vssr`
 sed -i "s/wget-ssl/wget/g" `grep wget-ssl -rl ./luci-app-vssr`
 # argon主题（适配最新版本luci）
 svn co https://github.com/jerrykuku/luci-theme-argon/trunk ./luci-theme-argon
