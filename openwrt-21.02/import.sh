@@ -18,6 +18,8 @@ svn co https://github.com/jerrykuku/luci-app-argon-config/trunk ./luci-app-argon
 svn co https://github.com/small-5/luci-app-adblock-plus/trunk ./luci-app-adblock-plus
 # ddns_pod
 svn co https://github.com/VergilGao/ddns-scripts-dnspod/trunk ./ddns-scripts-dnspod
+# uu加速器
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/uugamebooster
 
 # 修改语言包适配
 /tmp/convert.sh .
