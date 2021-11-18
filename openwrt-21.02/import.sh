@@ -20,6 +20,7 @@ svn co https://github.com/small-5/luci-app-adblock-plus/trunk ./luci-app-adblock
 svn co https://github.com/VergilGao/ddns-scripts-dnspod/trunk ./ddns-scripts-dnspod
 # uu加速器
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/uugamebooster
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-uugamebooster
 
 # 修改语言包适配
 /tmp/convert.sh .
