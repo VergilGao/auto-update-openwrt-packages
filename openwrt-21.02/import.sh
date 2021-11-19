@@ -11,6 +11,8 @@ done
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk ./luci-app-vssr
 sed -i "s/ --no-check-certificate / /g" `grep wget-ssl -rl ./luci-app-vssr`
 sed -i "s/wget-ssl/wget/g" `grep wget-ssl -rl ./luci-app-vssr`
+# openclash
+svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash ./luci-app-openclash
 # argon主题（适配最新版本luci）
 svn co https://github.com/jerrykuku/luci-theme-argon/trunk ./luci-theme-argon
 svn co https://github.com/jerrykuku/luci-app-argon-config/trunk ./luci-app-argon-config
