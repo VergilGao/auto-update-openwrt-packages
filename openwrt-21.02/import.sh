@@ -21,6 +21,8 @@ svn co https://github.com/VergilGao/ddns-scripts-dnspod/trunk ./ddns-scripts-dns
 # uu加速器
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/uugamebooster
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-uugamebooster
+# autocore 机型识别
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/autocore
 
 # 修改语言包适配
 /tmp/convert.sh .
