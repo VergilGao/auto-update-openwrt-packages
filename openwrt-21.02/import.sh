@@ -21,6 +21,7 @@ svn co https://github.com/VergilGao/ddns-scripts-dnspod/trunk ./ddns-scripts-dns
 # uu加速器
 svn co https://github.com/coolsnowwolf/packages/trunk/net/uugamebooster
 svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-uugamebooster
+sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' ./luci-app-uugamebooster/Makefile
 # 修改语言包适配
 /tmp/convert.sh .
 
