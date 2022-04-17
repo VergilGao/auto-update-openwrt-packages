@@ -14,8 +14,6 @@ sed -i "s/wget-ssl/wget/g" `grep wget-ssl -rl ./luci-app-vssr`
 # argon主题（适配最新版本luci）
 svn co https://github.com/jerrykuku/luci-theme-argon/trunk ./luci-theme-argon
 svn co https://github.com/jerrykuku/luci-app-argon-config/trunk ./luci-app-argon-config
-# 基于DNS的广告过滤
-svn co https://github.com/small-5/luci-app-adblock-plus/trunk ./luci-app-adblock-plus
 # ddns_pod
 svn co https://github.com/VergilGao/ddns-scripts-dnspod/trunk ./ddns-scripts-dnspod
 # uu加速器
