@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# smartdns
+svn co https://github.com/openwrt/packages/trunk/net/smartdns ./smartdns
 # vssr 和他的依赖
 svn co https://github.com/jerrykuku/lua-maxminddb/trunk ./maxminddb
 for i in "naiveproxy" "shadowsocks-rust" "shadowsocksr-libev" "simple-obfs" "tcping" "trojan" "v2ray-core" "v2ray-plugin" "xray-core" "xray-plugin"; do \
