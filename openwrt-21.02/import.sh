@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# golang 1.18+
+mkdir lang
+svn co https://github.com/openwrt/packages/branches/openwrt-22.03/lang/golang ./lang/golang
+
 # smartdns
 svn co https://github.com/openwrt/packages/trunk/net/smartdns ./smartdns
 # vssr 和他的依赖
