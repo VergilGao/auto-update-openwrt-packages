@@ -30,11 +30,11 @@ sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' ./luci-app-uugamebooster
 /tmp/convert.sh .
 
 # 统一清理
-rm -rf .svn
-rm -rf ./*/.git
-rm -rf ./*/.github
-rm -rf ./*/.svn 
-rm -f .gitattributes .gitignore
+find ./*/ -name '.svn' | xargs rm -rf
+find ./*/ -name '.git' | xargs rm -rf
+find ./*/ -name '.github' | xargs rm -rf
+find ./*/ -name '.gitattributes' | xargs rm -rf
+find ./*/ -name '.gitignore' | xargs rm -rf
 rm README.md
 
 exit 0
