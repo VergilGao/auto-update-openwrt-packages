@@ -1,11 +1,13 @@
 #!/bin/bash
 
-# golang 1.18+
 mkdir lang
+
+# golang 1.18+
 svn co https://github.com/openwrt/packages/branches/openwrt-22.03/lang/golang ./lang/golang
 
 # smartdns
-svn co https://github.com/openwrt/packages/trunk/net/smartdns ./smartdns
+svn co https://github.com/VergilGao/openwrt-smartdns/trunk ./smartdns
+svn co https://github.com/VergilGao/luci-app-smartdns/trunk ./luci-app-smartdns
 # vssr 和他的依赖
 svn co https://github.com/jerrykuku/lua-maxminddb/trunk ./maxminddb
 for i in "naiveproxy" "shadowsocks-rust" "shadowsocksr-libev" "simple-obfs" "tcping" "trojan" "v2ray-core" "v2ray-plugin" "xray-core" "xray-plugin" "hysteria"; do \
