@@ -32,7 +32,7 @@ svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-uugamebo
 # 修改语言包适配
 /tmp/convert.sh .
 # 修改 luci.mk 文件路径
-sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' `find ./ -name Makefile`
+sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' find ./ -name Makefile
 
 # 统一清理
 find ./*/ -name '.svn' | xargs rm -rf
