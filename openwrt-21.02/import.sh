@@ -29,6 +29,8 @@ svn co https://github.com/VergilGao/ddns-scripts-aliyun/trunk ./ddns-scripts-ali
 # uu加速器
 svn co https://github.com/coolsnowwolf/packages/trunk/net/uugamebooster
 svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-uugamebooster
+# 简单mesh
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-easymesh
 # 修改语言包适配
 /tmp/convert.sh .
 # 修改 luci.mk 文件路径
