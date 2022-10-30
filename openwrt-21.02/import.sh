@@ -31,6 +31,7 @@ svn co https://github.com/coolsnowwolf/packages/trunk/net/uugamebooster
 svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-uugamebooster
 # 简单mesh
 svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-easymesh
+sed -i "s/wpad-openssl/wpad-mesh-wolfssl/g" ./luci-app-easymesh/Makefile
 # 修改语言包适配
 /tmp/convert.sh .
 # 修改 luci.mk 文件路径
