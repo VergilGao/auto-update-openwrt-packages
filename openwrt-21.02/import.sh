@@ -32,6 +32,8 @@ svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-uugamebo
 # 简单mesh
 svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-easymesh
 sed -i "s/wpad-openssl/wpad-mesh-wolfssl/g" ./luci-app-easymesh/Makefile
+# luci-proto-batman-adv
+svn co https://github.com/openwrt/luci/trunk/protocols/luci-proto-batman-adv
 # 修改语言包适配
 /tmp/convert.sh .
 # 修改 luci.mk 文件路径
