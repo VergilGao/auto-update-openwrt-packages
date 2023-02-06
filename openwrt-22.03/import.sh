@@ -14,8 +14,6 @@ sed -i "s/wget-ssl/wget/g" `grep wget-ssl -rl ./luci-app-vssr`
 # argon主题（适配最新版本luci）
 svn co https://github.com/jerrykuku/luci-theme-argon/trunk ./luci-theme-argon
 svn co https://github.com/jerrykuku/luci-app-argon-config/trunk ./luci-app-argon-config
-# ddns_pod
-svn co https://github.com/VergilGao/ddns-scripts-dnspod/trunk ./ddns-scripts-dnspod
 # ddns_aliyun
 svn co https://github.com/VergilGao/ddns-scripts-aliyun/trunk ./ddns-scripts-aliyun
 # uu加速器
