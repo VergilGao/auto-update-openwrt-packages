@@ -11,11 +11,10 @@ done
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk ./luci-app-vssr
 sed -i "s/ --no-check-certificate / /g" `grep wget-ssl -rl ./luci-app-vssr`
 sed -i "s/wget-ssl/wget/g" `grep wget-ssl -rl ./luci-app-vssr`
+sed -i "s/+wget/+wget-ssl/g" ./luci-app-vssr/Makefile
 # argon主题（适配最新版本luci）
 svn co https://github.com/jerrykuku/luci-theme-argon/trunk ./luci-theme-argon
 svn co https://github.com/jerrykuku/luci-app-argon-config/trunk ./luci-app-argon-config
-# ddns_aliyun
-svn co https://github.com/VergilGao/ddns-scripts-aliyun/trunk ./ddns-scripts-aliyun
 # uu加速器
 svn co https://github.com/coolsnowwolf/packages/trunk/net/uugamebooster
 svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-uugamebooster
