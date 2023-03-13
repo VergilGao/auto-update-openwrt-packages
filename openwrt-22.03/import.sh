@@ -12,6 +12,7 @@ svn co https://github.com/jerrykuku/luci-app-vssr/trunk ./luci-app-vssr
 sed -i "s/ --no-check-certificate / /g" `grep wget-ssl -rl ./luci-app-vssr`
 sed -i "s/wget-ssl/wget/g" `grep wget-ssl -rl ./luci-app-vssr`
 sed -i "s/+wget/+wget-ssl/g" ./luci-app-vssr/Makefile
+sed -i '/luci.model.ipkg/d' ./luci-app-vssr/luasrc/model/cbi/vssr/server.lua
 # argon主题（适配最新版本luci）
 svn co https://github.com/jerrykuku/luci-theme-argon/trunk ./luci-theme-argon
 svn co https://github.com/jerrykuku/luci-app-argon-config/trunk ./luci-app-argon-config
