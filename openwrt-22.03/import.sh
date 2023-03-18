@@ -2,7 +2,7 @@
 
 # vssr 和他的依赖
 svn co https://github.com/jerrykuku/lua-maxminddb/trunk ./maxminddb
-for i in "naiveproxy" "shadowsocks-rust" "shadowsocksr-libev" "simple-obfs" "tcping" "trojan" "v2ray-core" "v2ray-plugin" "xray-core" "xray-plugin" "hysteria"; do \
+for i in "naiveproxy" "shadowsocks-rust" "shadowsocksr-libev" "simple-obfs" "tcping" "trojan" "v2ray-core" "v2ray-plugin" "xray-core" "xray-plugin" "hysteria" "gn"; do \
   svn co "https://github.com/fw876/helloworld/trunk/$i" "$i"; \
 done
 for i in "dns2socks" "microsocks" "ipt2socks" "pdnsd-alt" "redsocks2"; do \
