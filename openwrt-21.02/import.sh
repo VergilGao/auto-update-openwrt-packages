@@ -23,6 +23,9 @@ svn co https://github.com/jerrykuku/luci-app-argon-config/trunk ./luci-app-argon
 # uu加速器
 svn co https://github.com/coolsnowwolf/packages/trunk/net/uugamebooster
 svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-uugamebooster
+# chinadns-ng
+svn co https://github.com/pexcn/openwrt-chinadns-ng/trunk ./chinadns-ng
+svn co https://github.com/izilzty/luci-app-chinadns-ng/trunk ./luci-app-chinadns-ng
 # 修改语言包适配
 /tmp/convert.sh .
 # 修改 luci.mk 文件路径
