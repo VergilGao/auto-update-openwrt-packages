@@ -22,6 +22,9 @@ svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-uugamebo
 # chinadns-ng
 svn co https://github.com/pexcn/openwrt-chinadns-ng/trunk ./chinadns-ng
 svn co https://github.com/izilzty/luci-app-chinadns-ng/trunk ./luci-app-chinadns-ng
+# smartdns
+svn co https://github.com/pymumu/openwrt-smartdns/trunk ./smartdns
+svn co https://github.com/pymumu/luci-app-smartdns/trunk ./luci-app-smartdns
 # 修改语言包适配
 /tmp/convert.sh .
 # 修改 luci.mk 文件路径
