@@ -2,8 +2,8 @@
 
 mkdir lang
 
-# golang 1.18+
-svn co https://github.com/openwrt/packages/branches/openwrt-22.03/lang/golang ./lang/golang
+# golang 1.21+
+svn co https://github.com/immortalwrt/packages/trunk/lang/golang ./lang/golang
 # vssr 和他的依赖
 svn co https://github.com/jerrykuku/lua-maxminddb/trunk ./maxminddb
 for i in "naiveproxy" "shadowsocks-rust" "shadowsocksr-libev" "simple-obfs" "tcping" "trojan" "v2ray-core" "v2ray-plugin" "xray-core" "xray-plugin" "hysteria" "gn"; do \
