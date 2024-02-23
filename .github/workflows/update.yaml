@@ -23,7 +23,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: [openwrt-21.02, openwrt-22.03]
+        target: [openwrt-23.05]
 
     steps:
     - name: checkout
