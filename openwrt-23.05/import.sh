@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# luci-theme-design
+git clone --depth 1 -b js https://github.com/gngpp/luci-theme-design ./luci-theme-design
+
 # passwall2
 git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall2/ ./luci-app-passwall2
 mv ./luci-app-passwall2/luci-app-passwall2/* ./luci-app-passwall2/
