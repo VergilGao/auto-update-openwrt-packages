@@ -9,7 +9,7 @@ mv ./luci-app-passwall2/luci-app-passwall2/* ./luci-app-passwall2/
 rm -rf ./luci-app-passwall2/luci-app-passwall2/
 git clone --depth 1 --branch main --filter=blob:none --sparse https://github.com/fw876/helloworld helloworld
 cd helloworld && git sparse-checkout init --cone
-for i in "tcping" "v2ray-core"; do \
+for i in "tcping" "v2ray-core" "xray-core"; do \
   git sparse-checkout set "$i" && mv "$i" .. ; \
 done
 cd .. && rm -rf helloworld
