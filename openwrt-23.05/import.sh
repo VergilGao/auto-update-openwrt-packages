@@ -7,6 +7,12 @@ git clone --depth 1 -b js https://github.com/gngpp/luci-theme-design ./luci-them
 git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall2/ ./luci-app-passwall2
 mv ./luci-app-passwall2/luci-app-passwall2/* ./luci-app-passwall2/
 rm -rf ./luci-app-passwall2/luci-app-passwall2/
+git clone --depth 1 --branch main --filter=blob:none --sparse https://github.com/fw876/helloworld helloworld
+cd helloworld && git sparse-checkout init --cone
+for i in "tcping" "v2ray-core"; do \
+  git sparse-checkout set "$i" && mv "$i" .. ; \
+done
+cd .. && rm -rf helloworld
 
 # smartdns
 git clone --depth 1 https://github.com/pymumu/openwrt-smartdns/ ./smartdns
