@@ -12,7 +12,7 @@ mv ./luci-app-passwall2/luci-app-passwall2/* ./luci-app-passwall2/
 rm -rf ./luci-app-passwall2/luci-app-passwall2/
 git clone --depth 1 --branch main --filter=blob:none --sparse https://github.com/xiaorouji/openwrt-passwall-packages openwrt-passwall-packages
 cd openwrt-passwall-packages && git sparse-checkout init --cone
-for i in "tcping" "v2ray-core" "xray-core" "sing-box"; do \
+for i in "tcping" "v2ray-core" "xray-core" "v2ray-geodata" "sing-box"; do \
   git sparse-checkout set "$i" && mv "$i" .. ; \
 done
 cd .. && rm -rf openwrt-passwall-packages
