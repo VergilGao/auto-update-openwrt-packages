@@ -10,12 +10,12 @@ git clone --depth 1 -b master https://github.com/jerrykuku/luci-theme-argon ./lu
 git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall2/ ./luci-app-passwall2
 mv ./luci-app-passwall2/luci-app-passwall2/* ./luci-app-passwall2/
 rm -rf ./luci-app-passwall2/luci-app-passwall2/
-git clone --depth 1 --branch main --filter=blob:none --sparse https://github.com/fw876/helloworld helloworld
-cd helloworld && git sparse-checkout init --cone
-for i in "tcping" "v2ray-core" "xray-core"; do \
+git clone --depth 1 --branch main --filter=blob:none --sparse https://github.com/xiaorouji/openwrt-passwall-packages openwrt-passwall-packages
+cd openwrt-passwall-packages && git sparse-checkout init --cone
+for i in "tcping" "v2ray-core" "xray-core" "sing-box"; do \
   git sparse-checkout set "$i" && mv "$i" .. ; \
 done
-cd .. && rm -rf helloworld
+cd .. && rm -rf openwrt-passwall-packages
 
 # smartdns
 git clone --depth 1 https://github.com/pymumu/openwrt-smartdns/ ./smartdns
