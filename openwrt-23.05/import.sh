@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# golang
+git clone --depth 1 --filter=blob:none --sparse https://github.com/immortalwrt/packages immortalwrt
+cd immortalwrt && git sparse-checkout init --cone && git sparse-checkout set "lang/golang" && mv lang .. && cd .. && rm -rf immortalwrt
+
 # luci-theme-design
 git clone --depth 1 -b js https://github.com/gngpp/luci-theme-design ./luci-theme-design
 
