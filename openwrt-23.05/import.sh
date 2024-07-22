@@ -9,6 +9,7 @@ git clone --depth 1 -b master https://github.com/jerrykuku/luci-theme-argon ./lu
 
 # homeproxy
 git clone --depth 1 -b master https://github.com/immortalwrt/homeproxy ./luci-app-homeproxy
+sed -i '/chinadns-ng/d' ./luci-app-homeproxy/Makefile
 
 # 修改语言包适配
 /tmp/convert.sh .
