@@ -4,26 +4,11 @@
 git clone --depth 1 --filter=blob:none --sparse https://github.com/immortalwrt/packages immortalwrt
 cd immortalwrt && git sparse-checkout init --cone && git sparse-checkout set "lang/golang" && mv lang .. && cd .. && rm -rf immortalwrt
 
-# luci-theme-design
-git clone --depth 1 -b js https://github.com/gngpp/luci-theme-design ./luci-theme-design
-
 # luci-theme-argon
 git clone --depth 1 -b master https://github.com/jerrykuku/luci-theme-argon ./luci-theme-argon
 
-# passwall2
-git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall2/ ./luci-app-passwall2
-mv ./luci-app-passwall2/luci-app-passwall2/* ./luci-app-passwall2/
-rm -rf ./luci-app-passwall2/luci-app-passwall2/
-git clone --depth 1 --branch main --filter=blob:none --sparse https://github.com/xiaorouji/openwrt-passwall-packages openwrt-passwall-packages
-cd openwrt-passwall-packages && git sparse-checkout init --cone
-for i in "tcping" "v2ray-core" "xray-core" "v2ray-geodata" "sing-box"; do \
-  git sparse-checkout set "$i" && mv "$i" .. ; \
-done
-cd .. && rm -rf openwrt-passwall-packages
-
-# smartdns
-git clone --depth 1 https://github.com/pymumu/openwrt-smartdns/ ./smartdns
-git clone --depth 1 https://github.com/pymumu/luci-app-smartdns/ ./luci-app-smartdns
+# homeproxy
+git clone --depth 1 -b master https://github.com/immortalwrt/homeproxy ./luci-app-homeproxy
 
 # 修改语言包适配
 /tmp/convert.sh .
